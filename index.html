@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSLG Event Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>SSLG Event Tracker</h1>
+
+<!-- LOGIN -->
+<div id="loginSection">
+  <h2>Admin Login</h2>
+  <input type="password" id="password" placeholder="Enter admin password">
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+  <button onclick="logout()">Logout</button>
+
+  <h2>Create Event</h2>
+
+  <select id="eventType" onchange="updateEventForm()">
+    <option value="">--Select Event Type--</option>
+    <option value="Meeting">Meeting</option>
+    <option value="Activity">Activity</option>
+    <option value="Program/Project">Program/Project</option>
+  </select>
+
+  <div id="meetingFields" class="hidden">
+    <input type="text" id="meetingNumber" placeholder="Meeting Number">
+    <input type="text" id="meetingAbout" placeholder="Meeting About">
+    <select id="meetingLocation" onchange="checkOtherRoom()">
+      <option value="">--Select Room--</option>
+      <option value="SBM Hub">SBM Hub</option>
+      <option value="Ma'am Grace Room">Ma'am Grace Room</option>
+      <option value="Other">Other Room</option>
+    </select>
+    <div id="otherRoomFields" class="hidden">
+      <input type="text" id="otherRoomName" placeholder="Specify Room Name or Number">
+      <input type="text" id="adviserTeacher" placeholder="Adviser/Teacher in Room">
+    </div>
+    <input type="date" id="meetingDate">
+    <input type="time" id="meetingTime">
+    <input type="number" id="meetingPoints" placeholder="Points for full attendance (default 0.5)" step="0.01">
+  </div>
+
+  <div id="activityFields" class="hidden">
+    <input type="text" id="activityName" placeholder="Activity Name">
+    <input type="date" id="activityDate">
+    <input type="text" id="activityLocation" placeholder="Activity Location">
+    <input type="number" id="activityPoints" placeholder="Points for full attendance (default 0.5)" step="0.01">
+  </div>
+
+  <div id="programFields" class="hidden">
+    <input type="text" id="programName" placeholder="Program/Project Name">
+    <input type="date" id="programDate">
+    <input type="text" id="programLocation" placeholder="Program/Project Location">
+    <input type="number" id="programPoints" placeholder="Points for full attendance (default 0.5)" step="0.01">
+  </div>
+
+  <button onclick="addEvent()">Add Event</button>
+
+  <h2>Events List</h2>
+  <select id="selectEvent" onchange="loadChecklist()">
+    <option value="">--Select Event--</option>
+  </select>
+
+  <div id="checklistSection" class="hidden">
+    <h3>Attendance Checklist</h3>
+    <table id="checklistTable">
+      <tr><th>Student</th><th>Position</th><th>Attendance %</th><th>Points Earned</th></tr>
+    </table>
+  </div>
+
+  <h2>Students Total Points</h2>
+  <table id="studentPointsTable">
+    <tr><th>Student</th><th>Position</th><th>Total Points</th></tr>
+  </table>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
