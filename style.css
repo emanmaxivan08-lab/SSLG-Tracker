@@ -1,62 +1,74 @@
-body { 
-  font-family: Arial, sans-serif; 
-  background:#f0f4f8; 
-  padding:20px; 
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  padding: 10px;
+  margin: 0;
+}
+h1 {
+  text-align: center;
+}
+.hidden { display: none; }
+
+/* Containers */
+#loginSection, #dashboard {
+  width: 95%;
+  max-width: 900px;
+  margin: 10px auto;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
-h1 { text-align:center; }
-
-#loginSection, #dashboard { 
-  max-width:900px; 
-  margin:20px auto; 
-  background:white; 
-  padding:20px; 
-  border-radius:10px; 
-  box-shadow:0 2px 6px rgba(0,0,0,0.1); 
+/* Inputs & Buttons */
+input, select, button {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-input, select { 
-  padding:6px; 
-  margin:5px 0; 
-  border-radius:5px; 
-  border:1px solid #ccc; 
-  width:95%; 
+button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #45a049;
+}
+.logoutBtn {
+  width: auto;
+  float: right;
+  margin-bottom: 10px;
 }
 
-button { 
-  padding:6px 12px; 
-  border:none; 
-  background:#4CAF50; 
-  color:white; 
-  border-radius:5px; 
-  cursor:pointer; 
-  margin:5px 0; 
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+th { background: #f2f2f2; }
+
+/* Scrollable table for small screens */
+.table-wrapper {
+  overflow-x: auto;
 }
 
-button:hover { background:#45a049; }
-
-table { 
-  width:100%; 
-  border-collapse:collapse; 
-  margin-top:10px; 
-}
-
-th, td { 
-  border:1px solid #ddd; 
-  padding:8px; 
-  text-align:center; 
-}
-
-th { 
-  background:#f2f2f2; 
-}
-
-.hidden { display:none; }
-
-#eventInfo {
-  background:#eef;
-  padding:10px;
-  margin:10px 0;
-  border-radius:5px;
-  border:1px solid #99c;
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  h1 { font-size: 20px; }
+  th, td { font-size: 12px; padding: 6px; }
+  input, select, button { font-size: 14px; }
 }
